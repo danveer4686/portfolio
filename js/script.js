@@ -1,0 +1,1 @@
+console.log("first js program on vscode")
