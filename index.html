@@ -274,7 +274,7 @@
 							<div class="row">
 								<div class="col-md-6">
 									<!-- about text -->
-									<p> A Data Engineer from Mumbai, India with 9 years of experience. Proficient in
+									<p> A Data Engineer from Mumbai, India with <span id="experience"></span> years of experience. Proficient in
 										creating data lake solutions and DaaS/ data APIs. </p>
 									<p> Data Eng Stack: Spark | Scala | Kafka | GCP | SQL | Airflow | Hive | Hbase. </p>
 									<p> GCP Cloud Services: DataProc | BigQuery | Cloud-function | Cloud-build |
@@ -434,7 +434,8 @@
 							<!-- timeline item -->
 							<div class="timeline-container wow fadeInUp">
 								<div class="content">
-									<span class="time">2019 - Present | 5 years </span>
+									<span class="time"> 2019 - Present | <span id="exp_star"></span> years </span>
+
 									<h3 class="title">SDE III at <a href="https://www.startv.com/about-us"
 											target="_blank" rel="noopener noreferrer">
 											Disney Star </a> </h3>
@@ -728,6 +729,46 @@
 	<script src="js/parallax.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/custom.js"></script>
+
+	<script>
+  // STAR experience: Started in 2019 (assume July-based increments)
+  const startYearStar = 2019;
+  const incrementMonthStar = 6; // July
+
+  const today2 = new Date();
+  const year2 = today2.getFullYear();
+  const month2 = today2.getMonth();
+
+  // Calculate years at STAR
+  let starExp = year2 - startYearStar;
+  if (month2 < incrementMonthStar) {
+    starExp -= 1; // before July
+  }
+
+  document.getElementById("exp_star").textContent = starExp;
+</script>
+
+
+	<script>
+  // You had 9 years experience as of July 2024.
+  const baseExperience = 9;      // experience value
+  const baseYear = 2024;         // July 2024 → 9 years
+  const incrementMonth = 6;      // July = month index 6
+
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth();
+
+  // Calculate updated experience
+  let experience = baseExperience + (year - baseYear);
+  
+  // If before July, remove this year's increment
+  if (month < incrementMonth) {
+    experience -= 1;
+  }
+  document.getElementById("experience").textContent = experience;
+</script>
+
 
 </body>
 
